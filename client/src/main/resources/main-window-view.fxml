@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.ContextMenu?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="785.0" prefWidth="981.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="interfacesFx.MainController">
+    <children>
+        <VBox fx:id="canvasVbox" layoutX="1.0" layoutY="1.0" prefHeight="588.0" prefWidth="981.0">
+            <children>
+                <TabPane prefHeight="590.0" prefWidth="981.0" tabClosingPolicy="UNAVAILABLE">
+                    <tabs>
+                        <Tab fx:id="tableTab" text="table">
+                            <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="541.0" prefWidth="981.0">
+                                    <children>
+                                        <TableView fx:id="table" editable="true" layoutY="31.0" prefHeight="499.0" prefWidth="981.0">
+                                            <columns>
+                                                <TableColumn fx:id="idObj" onEditCommit="#updateCell" prefWidth="38.0" text="id" />
+                                                <TableColumn fx:id="nameObj" onEditCommit="#updateCell" prefWidth="158.0" text="name" />
+                                                <TableColumn fx:id="coordX" onEditCommit="#updateCell" prefWidth="86.0" text="coordinatesX" />
+                                                <TableColumn fx:id="coordY" minWidth="1.0" onEditCommit="#updateCell" prefWidth="84.0" text="coordinatesY" />
+                                                <TableColumn fx:id="creationDate" minWidth="1.0" onEditCommit="#updateCell" prefWidth="118.0" text="creation" />
+                                                <TableColumn fx:id="particip" minWidth="0.0" onEditCommit="#updateCell" prefWidth="75.0" text="participants" />
+                                                <TableColumn fx:id="albums" minWidth="0.0" onEditCommit="#updateCell" prefWidth="62.0" text="albums" />
+                                                <TableColumn fx:id="genre" minWidth="0.0" onEditCommit="#updateCell" prefWidth="44.0" text="genre" />
+                                                <TableColumn fx:id="studName" minWidth="0.0" onEditCommit="#updateCell" prefWidth="143.0" text="studioName" />
+                                                <TableColumn fx:id="studAdr" minWidth="0.0" onEditCommit="#updateCell" prefWidth="170.0" text="studioAddress" />
+                                            </columns>
+                                 <contextMenu>
+                                    <ContextMenu fx:id="contextMenu">
+                                      <items>
+                                          <MenuItem mnemonicParsing="false" onAction="#updateCell" text="update" />
+                                          <MenuItem mnemonicParsing="false" onAction="#addNew" text="add" />
+                                          <MenuItem mnemonicParsing="false" onAction="#removeElement" text="remove" />
+                                      </items>
+                                    </ContextMenu>
+                                 </contextMenu>
+                                        </TableView>
+                              <TextField fx:id="filterText" layoutX="1.0" layoutY="-2.0" prefHeight="30.0" prefWidth="658.0" promptText="filter" />
+                              <ComboBox fx:id="filterColumn" layoutX="682.0" layoutY="-1.0" onAction="#filter" prefHeight="30.0" prefWidth="285.0" />
+                                    </children>
+                                </AnchorPane>
+                            </content>
+                        </Tab>
+                        <Tab fx:id="canvasTab" text="canvas">
+                            <content>
+                                <AnchorPane fx:id="canvas" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                            </content>
+                        </Tab>
+                    </tabs>
+                </TabPane>
+            </children>
+        </VBox>
+        <Separator layoutX="1.0" layoutY="561.0" prefHeight="64.0" prefWidth="981.0" />
+        <AnchorPane layoutX="1.0" layoutY="593.0" prefHeight="192.0" prefWidth="981.0">
+            <children>
+                <Button fx:id="exitButton" layoutX="14.0" layoutY="17.0" mnemonicParsing="false" onAction="#onExitClick" text="exit" />
+                <Button fx:id="sendButton" layoutX="869.0" layoutY="17.0" mnemonicParsing="false" onAction="#onSendClick" prefHeight="30.0" prefWidth="98.0" text="send" />
+                <TextField fx:id="commandInput" layoutX="238.0" layoutY="16.0" prefHeight="26.0" prefWidth="594.0" promptText="Введите команду" />
+                <TextArea fx:id="infoText" editable="false" layoutY="47.0" prefHeight="141.0" prefWidth="981.0" />
+            <ImageView blendMode="MULTIPLY" fitHeight="141.0" fitWidth="363.0" layoutX="291.0" layoutY="51.0" opacity="0.41" pickOnBounds="true">
+               <image>
+                  <Image url="@images/467-4672502_flaming-hot-chester-cheetah-png-picture-chester-cheetah.png" />
+               </image>
+            </ImageView>
+            <ImageView blendMode="MULTIPLY" fitHeight="141.0" fitWidth="356.0" layoutX="611.0" layoutY="51.0" opacity="0.41" pickOnBounds="true">
+               <image>
+                  <Image url="@images/bt-chipsy-cheetos-prikol-85g-ketchup.jpg" />
+               </image>
+            </ImageView>
+            <Button fx:id="executeButton" layoutX="114.0" layoutY="17.0" mnemonicParsing="false" onAction="#onExecuteClick" prefHeight="30.0" prefWidth="98.0" text="scripts" />
+            </children>
+        </AnchorPane>
+        <HBox alignment="TOP_RIGHT" layoutX="222.0" prefHeight="40.0" prefWidth="721.0">
+            <children>
+                <Label fx:id="userNameLabel" prefHeight="18.0" prefWidth="306.0" text="username" />
+                <ComboBox fx:id="languageCB" onAction="#changeLang" prefWidth="150.0" />
+            </children>
+        </HBox>
+    </children>
+</AnchorPane>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="493.0" prefWidth="414.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="interfacesFx.ElementWindowController">
+   <children>
+      <TextField fx:id="name" layoutX="240.0" layoutY="74.0" />
+      <TextField fx:id="part" layoutX="240.0" layoutY="242.0" />
+      <TextField fx:id="alb" layoutX="240.0" layoutY="279.0" />
+      <TextField fx:id="sName" layoutX="240.0" layoutY="360.0" />
+      <TextField fx:id="sAddr" layoutX="240.0" layoutY="401.0" />
+      <TextField fx:id="cX" layoutX="240.0" layoutY="116.0" />
+      <Label fx:id="id" layoutX="240.0" layoutY="27.0" prefHeight="31.0" prefWidth="149.0" text="Label" />
+      <Text fx:id="idText" layoutX="46.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="id" />
+      <Text fx:id="nameText" layoutX="46.0" layoutY="91.0" strokeType="OUTSIDE" strokeWidth="0.0" text="name" />
+      <Text fx:id="participText" layoutX="46.0" layoutY="259.0" strokeType="OUTSIDE" strokeWidth="0.0" text="participants" />
+      <Text fx:id="albText" layoutX="46.0" layoutY="296.0" strokeType="OUTSIDE" strokeWidth="0.0" text="albums" />
+      <Text fx:id="genreText" layoutX="46.0" layoutY="338.0" strokeType="OUTSIDE" strokeWidth="0.0" text="genre" />
+      <Text fx:id="studNameText" layoutX="46.0" layoutY="377.0" strokeType="OUTSIDE" strokeWidth="0.0" text="studName" />
+      <Text fx:id="studAddrText" layoutX="46.0" layoutY="418.0" strokeType="OUTSIDE" strokeWidth="0.0" text="studAddr" />
+      <Text fx:id="coordXText" layoutX="46.0" layoutY="133.0" strokeType="OUTSIDE" strokeWidth="0.0" text="coordX" />
+      <TextField fx:id="cY" layoutX="240.0" layoutY="160.0" />
+      <Text fx:id="coordYText" layoutX="46.0" layoutY="177.0" strokeType="OUTSIDE" strokeWidth="0.0" text="coordY" />
+      <Label fx:id="crDate" layoutX="240.0" layoutY="199.0" prefHeight="31.0" prefWidth="149.0" text="Label" />
+      <Text fx:id="crDateText" layoutX="46.0" layoutY="219.0" strokeType="OUTSIDE" strokeWidth="0.0" text="createDate" />
+      <Button fx:id="noButton" layoutX="280.0" layoutY="444.0" mnemonicParsing="false" onAction="#onNoClick" prefHeight="25.0" prefWidth="109.0" text="cancel" />
+      <Button fx:id="yesButton" layoutX="46.0" layoutY="444.0" mnemonicParsing="false" onAction="#onYesClick" prefHeight="25.0" prefWidth="109.0" text="apply" />
+      <ComboBox fx:id="genreCombo" layoutX="240.0" layoutY="321.0" prefHeight="25.0" prefWidth="149.0" />
+   </children>
+</AnchorPane>
